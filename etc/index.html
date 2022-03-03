@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <!--babel은 자바스크립트 컴파일러-->
+  <!--최신 자바스크립트 문법(JSX)을 구형 브라우저에서도 돌 수 있도록 코드 자체를 변환-->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!--props의 타입을 확인-->
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script type="text/babel">
+    function Btn({ text, onClick, fontSize }) {
+      return (
+        <button
+          onClick={onClick}
+          style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+            fontSize,
+          }}
+        >
+          {text}
+        </button>
+      );
+    }
+
+    // 부모의 state가 변경될 때 모든 자식이 rerender되는 것을 방지
+    const MemorizedBtn = React.memo(Btn);
+
+    MemorizedBtn.propTypes = {
+      text: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+      fontSize: PropTypes.number,
+    };
+
+    function App() {
+      const [value, setValue] = React.useState("Save Changes");
+      const changeValue = () => setValue("Revert Changes");
+      return (
+        <div>
+          <MemorizedBtn text={value} onClick={changeValue} fontSize={18} />
+          <MemorizedBtn text="Continue" fontSize={10} />
+        </div>
+      );
+    }
+
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
