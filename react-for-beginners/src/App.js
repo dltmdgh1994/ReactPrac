@@ -1,60 +1,8 @@
 import { useEffect, useState } from "react";
+import Movie from "./components/Movie";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [coins, setCoins] = useState([]);
-  const [coin, setCoin] = useState(0);
-  const [USD, setUSD] = useState(0);
-  const [buy, setBuy] = useState(true);
-  const onCoinChange = (event) => setCoin(event.target.value);
-  const onUSDChange = (event) => setUSD(event.target.value);
-  const onSubmit = (event) => {
-    // submit태그는 값을 전송하면서 창이 새로고침(reload)된다.
-    // 이런 태그의 이벤트 기능을 preventDefault를 통하여 동작 방지
-    event.preventDefault();
-    if (USD === "") {
-      return;
-    }
-    setBuy(false);
-    setUSD(0);
-  };
-  // useEffect를 이용해 단 한번만 API를 호출
-  useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers")
-      .then((response) => response.json())
-      .then((json) => {
-        setCoins(json);
-        setLoading(false);
-      });
-  }, []);
-
-  return (
-    <div>
-      <h1>The Coin {loading ? "" : `(${coins.length})`}</h1>
-      {loading ? (
-        <strong>Loading...</strong>
-      ) : (
-        <select onChange={onCoinChange}>
-          {coins.map((coin, idx) => (
-            <option value={coin.quotes.USD.price} key={idx}>
-              {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
-            </option>
-          ))}
-        </select>
-      )}
-      <hr />
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onUSDChange}
-          value={USD}
-          type="number"
-          placeholder="Write your USD..."
-        />
-        <button>Input USD</button>
-      </form>
-      <h2>{buy ? "Select your coin" : `You can buy ${USD / coin}`}</h2>
-    </div>
-  );
+  return null;
 }
 
 export default App;
