@@ -1,17 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./theme";
 import App from "./App";
-
-const darkTheme = {
-  textColor: "whitesmoke",
-  backgroundColor: "#111",
-};
-
-const lightTheme = {
-  textColor: "#111",
-  backgroundColor: "whitesmoke",
-};
+import TypescriptPrac from "./TypescriptPrac";
+import StyledComponents from "./StyledComponentsPrac";
 
 ReactDOM.render(
   <React.StrictMode>
