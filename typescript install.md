@@ -1,9 +1,10 @@
-
-
 ### 처음부터 설치하는 경우
 
-1. cmd에서 **npx create-react-app my-app --template typescript**
-2. styled-components 재설치 **npm i styled-components**
+1. npx create-react-app my-app --template typescript
+2. npm i styled-components
+3. npm i --save-dev @types/styled-components
+4. npm i react-router-dom react-query
+5. npm i --save-dev @types/react-router-dom
 
 
 
