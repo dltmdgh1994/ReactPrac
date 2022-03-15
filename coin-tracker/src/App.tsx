@@ -60,7 +60,7 @@ body {
 }
 a {
   text-decoration:none; // 링크 밑줄 없어짐
-  color:inherit;
+  color:inherit; // 색깔 변하지 않게함
 }
 `;
 
