@@ -9,6 +9,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Coins />} />
+        {/* nested routes */}
         <Route path="/:coinId" element={<Coin />}>
           <Route path="chart" element={<Chart />} />
           <Route path="price" element={<Price />} />

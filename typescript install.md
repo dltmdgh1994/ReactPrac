@@ -5,6 +5,7 @@
 3. npm i --save-dev @types/styled-components
 4. npm i react-router-dom react-query
 5. npm i --save-dev @types/react-router-dom
+6. npm install --save react-apexcharts apexcharts
 
 
 
