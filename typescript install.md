@@ -5,7 +5,10 @@
 3. npm i --save-dev @types/styled-components
 4. npm i react-router-dom react-query
 5. npm i --save-dev @types/react-router-dom
-6. npm install --save react-apexcharts apexcharts
+6. npm install --save react-apexcharts apexcharts //차트
+7. npm i react-helmet //아이콘
+8. npm i --save-dev @types/react-helmet
+9. npm i gh-pages //github 업로드용
 
 
 
